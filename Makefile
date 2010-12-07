@@ -60,13 +60,13 @@
 
 
 # MCU name
-MCU = atmega32u4
+#MCU = atmega32u4
 
 
 # Target board (see library "Board Types" documentation, NONE for projects not requiring
 # LUFA board drivers). If USER is selected, put custom board drivers in a directory called 
 # "Board" inside the application directory.
-BOARD  = TEENSY
+#BOARD  = TEENSY
 
 
 # Processor frequency.
@@ -80,7 +80,111 @@ BOARD  = TEENSY
 #     does not *change* the processor frequency - it should merely be updated to
 #     reflect the processor speed set externally so that the code can use accurate
 #     software delays.
-F_CPU = 16000000
+#F_CPU = 16000000
+
+## *** Select your board *** ##
+
+## Teensy 1.0
+#MCU = at90usb162
+#BOARD = TEENSY
+#F_CPU = 16000000
+
+## Teensy++ 1.0
+#MCU = at90usb646
+#BOARD = TEENSY
+#F_CPU = 16000000
+
+## Teensy 2.0
+#MCU = atmega32u4
+#BOARD = TEENSY
+#F_CPU = 16000000
+
+# Teensy++ 2.0
+#MCU = at90usb1286
+#BOARD  = TEENSY
+#F_CPU = 16000000
+
+## AT90USBKEY / AT90USBKEY2
+#MCU = at90usb1287
+#BOARD = USBKEY
+#F_CPU = 8000000
+
+## Minimus v1
+#MCU = at90usb162
+#BOARD = MINIMUS
+#F_CPU = 16000000
+
+## Minimus 32
+## It actually is atmega32u2 but at90usb162 is compatible and
+## the latest avr-gcc doesn't compile for atmega32u2
+#MCU = atmega32u2
+#BOARD = MINIMUS
+#F_CPU = 16000000
+
+## Maximus
+#MCU = at90usb162
+#BOARD = MAXIMUS
+#F_CPU = 16000000
+
+## Blackcat
+#MCU = at90usb162
+#BOARD = BLACKCAT
+#F_CPU = 16000000
+
+## Xplain
+#MCU = at90usb1287
+#BOARD = XPLAIN
+#F_CPU = 8000000
+
+## Olimex
+#MCU = at90usb162
+#BOARD = OLIMEX
+#F_CPU = 8000000
+
+## USBTINYMKII
+#MCU = at90usb162
+#BOARD = USBTINYMKII
+#F_CPU = 16000000
+
+## Benito
+#MCU = at90usb162
+#BOARD = BENITO
+#F_CPU = 16000000
+
+## OpenKubus
+#MCU = atmega16u4
+#BOARD = USBKEY
+#F_CPU = 8000000
+
+# ATAVRUSBRF01
+#MCU = at90usb162
+#BOARD = ATAVRUSBRF01
+#F_CPU = 16000000
+
+# UDIP8
+#MCU = at90usb162
+#BOARD = UDIP
+#F_CPU = 8000000
+
+# UDIP16
+#MCU = at90usb162
+#BOARD = UDIP
+#F_CPU = 16000000
+
+# AVRKEY
+#MCU = atmega32u2
+#BOARD = AVRKEY
+#F_CPU = 16000000
+
+# PS2CHIPER
+#MCU = at90usb162
+#BOARD = PS2CHIPER
+#F_CPU = 8000000
+
+# JMDBU2
+#MCU = atmega32u4
+#BOARD = JMDBU2
+#F_CPU = 8000000
 
 
 # Input clock frequency.
