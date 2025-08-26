@@ -1,0 +1,38 @@
+name: Auto Build & Release PSGrade
+
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install AVR toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gcc-avr avr-libc make
+
+      - name: Make build script executable
+        run: chmod +x ./build_hex.sh
+
+      - name: Build all targets
+        run: ./build_hex.sh
+
+      - name: Get Current Date
+        id: date
+        run: echo "date=$(date +'%Y-%m-%d-%H%M%S')" >> $GITHUB_OUTPUT
+
+      - name: Create Release and Upload HEX Files
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: psgrade-${{ steps.date.outputs.date }}
+          name: "Auto Release ${{ steps.date.outputs.date }}"
+          files: psgrade_hex/**/*.hex
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
