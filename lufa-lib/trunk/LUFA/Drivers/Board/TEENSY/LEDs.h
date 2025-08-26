@@ -69,7 +69,9 @@
 	/* Public Interface - May be used in end-application: */
 		/* Macros: */
 			/** LED mask for the first LED on the board. */
-			#define LEDS_LED1        (1 << 6)
+			#define LEDS_LED1        (1 << 5)
+			#define LEDS_LED2        (1 << 5)
+            // for teensy original mapping (1 << 6)
 
 			/** LED mask for all the LEDs on the board. */
 			#define LEDS_ALL_LEDS    LEDS_LED1
@@ -126,4 +128,3 @@
 #endif
 
 /** @} */
-
